@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:flutter_webrtc_deom/web_rtc/rtc_util.dart';
 
@@ -33,12 +34,10 @@ Future webRtcHandshake(String url, String sdp, {type = 'play'}) async {
       }
       return Future.value(RTCSessionDescription(o['sdp'], 'answer'));
     } else {
-      // ToastUtils.showToast("直播服务认证失败", type: 'error');
       return Future.error('请求推流服务器信令验证失败 status: ${response.statusCode}');
     }
   } catch (err) {
-    // ToastUtils.showToast("直播服务认证失败$err", type: 'error');
-    print('获取 webrtc sdp 报错$err');
+    debugPrint('获取 webrtc sdp 报错$err');
     throw Error();
   }
 }

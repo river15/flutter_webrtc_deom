@@ -166,7 +166,7 @@ class WebRtcController extends GetxController {
 
       callback?.call(true);
     } catch (e) {
-      print('webrtc - 添加远程视频失败$e');
+      debugPrint('webrtc - 添加远程视频失败$e');
       callback?.call(false);
     }
   }
@@ -266,7 +266,7 @@ class WebRtcController extends GetxController {
           ],
         'width': videoSize?.width,
         'height': videoSize?.height,
-        'frameRate': 60,
+        'frameRate': 30,
       },
     };
 
@@ -330,7 +330,7 @@ class WebRtcController extends GetxController {
     var _inx = rtcList.indexWhere((item) => item['renderId'] == renderId);
 
     if (_inx == -1) {
-      print('直播不存在');
+      debugPrint('直播不存在');
       return;
     }
     rtcList[_inx]['pc'].close();

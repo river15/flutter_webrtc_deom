@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_webrtc_deom/web_rtc/web_rtc.dart';
+import 'package:flutter_webrtc_deom/web_rtc/webrtc_cy_test.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,7 +8,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const WebRtcWidget(),
+      home: const WebRtcBySrsWidget(),
     );
   }
 }
